@@ -37,7 +37,7 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
 
-    - name: Creating bastion host
+    - name: Creating Bastion host
       ec2:
         key_name: vprofile-key
         region: "{{region}}"
@@ -46,12 +46,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          Name: "bastion host"
+          Name: "Bastion_host"
           Project: Vprofile
           Owner: DevOps Team
         exact_count: 1
         count_tag:
-          Name: "bastion host"
+          Name: "Bastion_host"
           Project: Vprofile
           Owner: DevOps Team
         group_id: "{{BastionSG_out.group_id}}"
