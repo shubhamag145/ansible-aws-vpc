@@ -20,7 +20,7 @@
     - name: store login key
       copy:
         content: "{{key_out.key.private_key}}"
-        dest: "./bastion-key.pem"
+        dest: ./bastion-key.pem
         mode: 600
       when: key_out.changed
 
@@ -42,7 +42,7 @@
         key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
-        image: "{{ bastion_ami }}"
+        image: "{{ bastion-ami }}"
         wait: yes
         wait_timeout: 300
         instance_tags:
