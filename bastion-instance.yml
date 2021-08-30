@@ -39,6 +39,7 @@
 
 
     - name: Creating bastion host
+      ec2:
         key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
