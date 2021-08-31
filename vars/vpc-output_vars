@@ -9,6 +9,7 @@ igwid: igw-01658329befb9a454
 pubRTid: rtb-08b8571f394f9639f
 NATGWid: nat-01d9941d8e082d039
 privRTid: rtb-0f479a340d1405fd3
+BastionSGid:
 
 # Region Name
 region: "us-east-1"
