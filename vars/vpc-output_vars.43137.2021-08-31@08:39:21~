@@ -13,6 +13,3 @@ BastionSGid:
 
 # Region Name
 region: "us-east-1"
-# BEGIN ANSIBLE MANAGED BLOCK
-BastionSGid: "sg-0cad0139b3491b0de"
-# END ANSIBLE MANAGED BLOCK
