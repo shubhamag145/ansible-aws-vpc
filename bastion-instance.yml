@@ -61,3 +61,9 @@
       register: bastionHost_out
 
 
+    - name: Insert/Update "BastionSGid" in vars/vpc-out-vars
+        blockinfile:
+          path: vars/vpc-out-vars
+          backup: yes
+          block: |
+            BastionSGid: "{{BastionSG_out.group_id}}"
