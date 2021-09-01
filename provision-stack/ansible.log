@@ -1,0 +1,65 @@
+2021-09-01 10:50:31,446 p=1601 u=ubuntu n=ansible | PLAY [Generate artifact,copy artifact & sql file to files directory] **********************************
+2021-09-01 10:50:31,461 p=1601 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2021-09-01 10:50:32,753 p=1601 u=ubuntu n=ansible | ok: [localhost]
+2021-09-01 10:50:32,769 p=1601 u=ubuntu n=ansible | TASK [Install jdk , maven, git] ***********************************************************************
+2021-09-01 10:50:56,900 p=1601 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2021-09-01 10:51:54,790 p=1601 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2021-09-01 10:52:08,257 p=1601 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2021-09-01 10:52:08,302 p=1601 u=ubuntu n=ansible | TASK [Clone source code from github] ******************************************************************
+2021-09-01 10:52:12,508 p=1601 u=ubuntu n=ansible | changed: [localhost]
+2021-09-01 10:52:12,518 p=1601 u=ubuntu n=ansible | TASK [mvn install command to build artifact] **********************************************************
+2021-09-01 10:52:55,054 p=1601 u=ubuntu n=ansible | changed: [localhost]
+2021-09-01 10:52:55,098 p=1601 u=ubuntu n=ansible | TASK [copy artifacts to files directory] **************************************************************
+2021-09-01 10:52:56,184 p=1601 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2021-09-01 10:52:56,195 p=1601 u=ubuntu n=ansible | TASK [Copy SQl file to files directory] ***************************************************************
+2021-09-01 10:52:56,616 p=1601 u=ubuntu n=ansible | changed: [localhost]
+2021-09-01 10:52:56,631 p=1601 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2021-09-01 10:52:56,631 p=1601 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:11,229 p=6728 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ********************
+2021-09-01 11:13:11,262 p=6728 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2021-09-01 11:13:12,520 p=6728 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: loginkey_vpro.pem: No such file or directory\r\nubuntu@172.20.4.70: Permission denied (publickey).", "unreachable": true}
+2021-09-01 11:13:12,531 p=6728 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: loginkey_vpro.pem: No such file or directory\r\nubuntu@172.20.4.214: Permission denied (publickey).", "unreachable": true}
+2021-09-01 11:13:12,581 p=6728 u=ubuntu n=ansible | fatal: [mc01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: loginkey_vpro.pem: No such file or directory\r\nubuntu@172.20.4.72: Permission denied (publickey).", "unreachable": true}
+2021-09-01 11:13:12,589 p=6728 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: loginkey_vpro.pem: No such file or directory\r\nubuntu@172.20.4.110: Permission denied (publickey).", "unreachable": true}
+2021-09-01 11:13:12,985 p=6728 u=ubuntu n=ansible | ok: [cntl]
+2021-09-01 11:13:13,700 p=6728 u=ubuntu n=ansible | fatal: [db01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: no such identity: loginkey_vpro.pem: No such file or directory\r\nubuntu@172.20.4.180: Permission denied (publickey).", "unreachable": true}
+2021-09-01 11:13:13,717 p=6728 u=ubuntu n=ansible | TASK [Import VPC setuo Variable] **********************************************************************
+2021-09-01 11:13:13,734 p=6728 u=ubuntu n=ansible | ok: [cntl]
+2021-09-01 11:13:13,743 p=6728 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************
+2021-09-01 11:13:14,111 p=6728 u=ubuntu n=ansible | changed: [cntl]
+2021-09-01 11:13:14,128 p=6728 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2021-09-01 11:13:14,128 p=6728 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:14,129 p=6728 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:14,129 p=6728 u=ubuntu n=ansible | db01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:14,129 p=6728 u=ubuntu n=ansible | mc01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:14,130 p=6728 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:13:14,130 p=6728 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:22:54,299 p=6912 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ********************
+2021-09-01 11:22:54,313 p=6912 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2021-09-01 11:22:55,983 p=6912 u=ubuntu n=ansible | ok: [cntl]
+2021-09-01 11:22:56,462 p=6912 u=ubuntu n=ansible | ok: [app01]
+2021-09-01 11:22:56,989 p=6912 u=ubuntu n=ansible | ok: [rmq01]
+2021-09-01 11:22:57,175 p=6912 u=ubuntu n=ansible | ok: [web01]
+2021-09-01 11:22:57,389 p=6912 u=ubuntu n=ansible | ok: [mc01]
+2021-09-01 11:22:58,916 p=6912 u=ubuntu n=ansible | ok: [db01]
+2021-09-01 11:22:58,932 p=6912 u=ubuntu n=ansible | TASK [Import VPC setuo Variable] **********************************************************************
+2021-09-01 11:22:58,980 p=6912 u=ubuntu n=ansible | ok: [cntl]
+2021-09-01 11:22:59,002 p=6912 u=ubuntu n=ansible | ok: [web01]
+2021-09-01 11:22:59,024 p=6912 u=ubuntu n=ansible | ok: [app01]
+2021-09-01 11:22:59,046 p=6912 u=ubuntu n=ansible | ok: [mc01]
+2021-09-01 11:22:59,048 p=6912 u=ubuntu n=ansible | ok: [rmq01]
+2021-09-01 11:22:59,058 p=6912 u=ubuntu n=ansible | ok: [db01]
+2021-09-01 11:22:59,067 p=6912 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************
+2021-09-01 11:22:59,846 p=6912 u=ubuntu n=ansible | changed: [app01]
+2021-09-01 11:22:59,871 p=6912 u=ubuntu n=ansible | changed: [rmq01]
+2021-09-01 11:22:59,968 p=6912 u=ubuntu n=ansible | ok: [cntl]
+2021-09-01 11:22:59,970 p=6912 u=ubuntu n=ansible | changed: [web01]
+2021-09-01 11:23:00,052 p=6912 u=ubuntu n=ansible | changed: [mc01]
+2021-09-01 11:23:00,248 p=6912 u=ubuntu n=ansible | changed: [db01]
+2021-09-01 11:23:00,264 p=6912 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2021-09-01 11:23:00,265 p=6912 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:23:00,265 p=6912 u=ubuntu n=ansible | cntl                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:23:00,265 p=6912 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:23:00,265 p=6912 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:23:00,266 p=6912 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-01 11:23:00,266 p=6912 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
